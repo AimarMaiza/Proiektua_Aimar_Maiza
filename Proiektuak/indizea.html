@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Formularioa</title>
+  <link rel="stylesheet" href="b.css">
+</head>
+<body>
+
+  <header class="goiburua">
+    <h1>Erregistro formularioa</h1>
+  </header>
+
+  <main class="formulario-kontainerra">
+    <form>
+      <div class="form-errenkada">
+        <label for="izena">Izen osoa:</label>
+        <input type="text" id="izena" name="izena" placeholder="Sartu zure izen osoa">
+      </div>
+
+      <div class="form-errenkada">
+        <label for="posta">posta elektronikoa:</label>
+        <input type="email" id="posta" name="posta" placeholder="Sartu zure emaila">
+      </div>
+
+      <div class="form-errenkada">
+        <label for="pasahitza">Pasahitza:</label>
+        <input type="password" id="pasahitza" name="pasahitza" placeholder="Sortu zure pasahitza">
+      </div>
+
+      <div class="form-errenkada">
+        <label>Generoa:</label>
+        <div class="form-taldea">
+          <input type="radio" id="gizonezkoa" name="generoa" value="male">
+          <label for="gizonezkoa">Gizonezkoa</label>
+
+          <input type="radio" id="emakumezkoa" name="generoa" value="emakumezkoa">
+          <label for="emakumezkoa">Emakumezkoa</label>
+
+          <input type="radio" id="besteak" name="generoa" value="besteak">
+          <label for="besteak">Besteak</label>
+        </div>
+      </div>
+
+      <div class="form-errenkada">
+        <label>Hobbies:</label>
+        <div class="form-taldea">
+          <input type="checkbox" id="irakurketa" name="hobbies" value="irakurketa">
+          <label for="irakurketa">Irakurketa</label>
+
+          <input type="checkbox" id="kirolak" name="hobbies" value="kirolak">
+          <label for="kirolak">Kirolak</label>
+
+          <input type="checkbox" id="jolasa" name="hobbies" value="jolasa">
+          <label for="jolasa">Jolasa</label>
+        </div>
+      </div>
+
+      <div class="form-errenkada">
+        <label for="herrialdea">Herrialdea:</label>
+        <select id="herrialdea" name="herrialdea">
+          <option value="">Aukeratu zure herrialdea</option>
+          <option value="us">Ameriketako estatu batuak</option>
+          <option value="uk">Erresuma Batuak</option>
+          <option value="kanada">Kanada</option>
+          <option value="australia">Australia</option>
+        </select>
+      </div>
+
+      <div class="form-errenkada">
+        <button type="submit" class="submit-btn">Register</button>
+      </div>
+    </form>
+  </main>
+
+</body>
+</html>
