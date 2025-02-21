@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalizatzailea</title>
+    <link rel="stylesheet" href="ab.css">
+    <script>
+        function cambiarFondo(element) {
+            document.body.style.backgroundColor = element.getAttribute('data-color');
+        }
+
+        function cambiarTexto(element) {
+            document.getElementById('texto').style.color = element.getAttribute('data-color');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="ab.html">Pertsonalizatzailea</a></li>
+            <li><a href="formularioa_proiektua.html">Formularioa</a></li>
+            <li><a href="#">Irudiak</a></li>
+            
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="text-left">
+            <h1 >Ongi etorria pertsonalizatzaileara</h1>
+            <p id="texto">Paragrafo honen estiloa alda dezakezu.</p>
+            <p id="texto">Klik egin pertsonalizatzeko.</p>
+        </div>
+        <div class="config-center">
+            <div class="colores">
+                <p>Atzeko Kolorea</p>
+                <button class="color" data-color="#f88" onclick="cambiarFondo(this)" style="background-color:#f88;"></button>
+                <button class="color" data-color="#8f8" onclick="cambiarFondo(this)" style="background-color:#8f8;"></button>
+                <button class="color" data-color="#88f" onclick="cambiarFondo(this)" style="background-color:#88f;"></button>
+                <button class="color" data-color="#000" onclick="cambiarFondo(this)" style="background-color:#000;"></button>
+                <button class="color" data-color="#fff" onclick="cambiarFondo(this)" style="background-color:#fff; border:1px solid #000;"></button>
+            </div>
+            <div class="letras">
+                <p>Aldatu Letrak</p>
+                <button class="letra" data-color="red" onclick="cambiarTexto(this)" >R</button>
+                <button class="letra" data-color="green" onclick="cambiarTexto(this)" >G</button>
+                <button class="letra" data-color="blue" onclick="cambiarTexto(this)" >BL</button>
+                <button class="letra" data-color="black" onclick="cambiarTexto(this)" >B</button>
+                <button class="letra" data-color="white" onclick="cambiarTexto(this)" >W</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
