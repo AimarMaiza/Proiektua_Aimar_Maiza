@@ -7,12 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
         nav {
             background: #333;
             padding: 10px;
@@ -37,6 +38,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            column-gap:  150px;
         }
         label {
             font-weight: bold;
@@ -51,7 +53,7 @@
         .error {
             border: 1px solid red;
         }
-        .buttons {
+        .botoia {
             display: flex;
             justify-content: space-between;
             width: 100%;
@@ -60,7 +62,9 @@
         .generoa{
             display: flex;
         }
-       
+        #formularioa{
+            column-gap:  150px;
+        }
     </style>
 </head>
 <body>
@@ -73,7 +77,7 @@
         </ul>
     </nav>
     <div class="form-container">
-        <form id="myForm">
+        <form id="formularioa">
             <label for="name">Izen osoa:</label>
             <input type="text" id="name" name="name" required>
             
@@ -82,14 +86,18 @@
             
             <button type="button" onclick="validateEmail()">Onartu</button><br>
             <label>Generoa:</label><br>
-            <div class="generoa">
-            
-            <input type="radio" id="male" name="gender" value="Gizonezkoa"> <label for="male">Gizonezkoa</label>
-            <input type="radio" id="female" name="gender" value="Emakumezkoa"> <label for="female">Emakumezkoa</label>
-            <input type="radio" id="other" name="gender" value="Beste bat"> <label for="other">Beste bat</label>
-            </div>
-            <label for="country">Estatua:</label>
-            <select id="country" name="country">
+        <div class="generoa">
+          <input type="radio" id="gizonezkoa" name="generoa" value="male">
+          <label for="gizonezkoa">Gizonezkoa</label>
+
+          <input type="radio" id="emakumezkoa" name="generoa" value="emakumezkoa">
+          <label for="emakumezkoa">Emakumezkoa</label>
+
+          <input type="radio" id="besteak" name="generoa" value="besteak">
+          <label for="besteak">Besteak</label>
+        </div><br>
+            <label for="herrialdea">Herrialdea:</label>
+            <select id="herrialdea" name="herrialdea">
                 <option value="">Aukeratu zure herrialdea</option>  
                 <option value="eh">Euskal Herria</option>    
                 <option value="eb">Erresuma batuak</option>
@@ -97,7 +105,7 @@
                 <option value="au">Australia</option>
             </select>
             
-            <div class="buttons">
+            <div class="botoia">
                 <button type="submit">Bidali</button>
             </div>
         </form>
