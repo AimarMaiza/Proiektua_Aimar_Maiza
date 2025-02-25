@@ -53,11 +53,17 @@
         .error {
             border: 1px solid red;
         }
-        .botoia {
-            display: flex;
-            justify-content: space-between;
+        button {
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+        }
+        button{
             width: 100%;
-            
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         .generoa{
             display: flex;
@@ -105,7 +111,7 @@
                 <option value="au">Australia</option>
             </select>
             
-            <div class="botoia">
+            <div id="botoia">
                 <button type="submit">Bidali</button>
             </div>
         </form>

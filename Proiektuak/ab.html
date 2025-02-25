@@ -32,28 +32,58 @@
             </div>
             <div class="letrak">
                 <p>Aldatu Letrak</p>
-                <button class="letra" data-color="red" onclick="cambiarTexto()" >R</button>
-                <button class="letra" data-color="green" onclick="cambiarTexto()" >G</button>
-                <button class="letra" data-color="blue" onclick="cambiarTexto()" >BL</button>
-                <button class="letra" data-color="black" onclick="cambiarTexto()" >B</button>
-                <button class="letra" data-color="white" onclick="cambiarTexto()" >W</button>
+                <button class="letra" data-color="red" onclick="aldatutestua()" >R</button>
+                <button class="letra" data-color="green" onclick="aldatutestua1()" >G</button>
+                <button class="letra" data-color="blue" onclick="aldatutestua2()" >BL</button>
+                <button class="letra" data-color="black" onclick="aldatutestua3()" >B</button>
+                <button class="letra" data-color="white" onclick="aldatutestua4()" >W</button>
             </div>
             <p>Aldatu letrak</p>
-            <div class="tamainua" onclick="changeTextSize('16px')">S</div>
-            <div class="tamainua" onclick="changeTextSize('20px')">M</div>
-            <div class="tamainua" onclick="changeTextSize('24px')">L</div>
+            <button class="tamainua" onclick="aldatuTestuatamainua()">S</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua1()">XS</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua2()">M</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua3()">L</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua4()">XL</button>
         </div>
     </div>
     <script>
         function cambiarFondo(element) {
             document.body.style.backgroundColor = element.getAttribute('data-color');
         }
-
-        function cambiarTexto() {
+        function aldatutestua() {
             document.getElementsByClassName("testuak")[0].style.color = "red";
         }
-        function cambiarTexto() {
-            document.getElementsByClassName("testuak")[0].style.color = "red";
+        function aldatutestua1() {
+            document.getElementsByClassName("testuak")[0].style.color = "green";
+        }
+        function aldatutestua2() {
+            document.getElementsByClassName("testuak")[0].style.color = "blue";
+        }
+        function aldatutestua3() {
+            document.getElementsByClassName("testuak")[0].style.color = "black";
+        }
+        function aldatutestua4() {
+            document.getElementsByClassName("testuak")[0].style.color = "white";
+        }
+        function aldatuTestuatamainua(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "12px";
+            document.getElementsByTagName("p")[0].style.fontSize = "12px";
+        }
+        function aldatuTestuatamainua1(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "20px";
+            document.getElementsByTagName("p")[0].style.fontSize = "20px";
+        }
+        function aldatuTestuatamainua2(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "30px";
+            document.getElementsByTagName("p")[0].style.fontSize = "30px";
+        }
+        function aldatuTestuatamainua3(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "45px";
+            document.getElementsByTagName("p")[0].style.fontSize = "45px";
+        }
+        function aldatuTestuatamainua4(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "50px";
+            document.getElementsByTagName("p")[0].style.fontSize = "50px";
         }
     </script>
 </body>
