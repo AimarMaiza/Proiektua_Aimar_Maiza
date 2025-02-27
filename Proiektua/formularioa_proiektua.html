@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            color: white;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error {
+            border: 1px solid red;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            
+        }
+        .generoa{
+            display: flex;
+        }
+       
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Pertsonalizatzailea</a></li>
+            <li><a href="#">Formularioa</a></li>
+            <li><a href="#">Irudiak</a></li>
+            <li><a href="#">Moduak</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <form id="myForm">
+            <label for="name">Izen osoa:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Emaila:</label>
+            <input type="email" id="email" name="email" placeholder="Sartzazu zure posta elektronikoa" required>
+            
+            <button type="button" onclick="validateEmail()">Onartu</button><br>
+            <label>Generoa:</label><br>
+            <div class="generoa">
+            
+            <input type="radio" id="male" name="gender" value="Gizonezkoa"> <label for="male">Gizonezkoa</label>
+            <input type="radio" id="female" name="gender" value="Emakumezkoa"> <label for="female">Emakumezkoa</label>
+            <input type="radio" id="other" name="gender" value="Beste bat"> <label for="other">Beste bat</label>
+            </div>
+            <label for="country">Estatua:</label>
+            <select id="country" name="country">
+                <option value="">Aukeratu zure herrialdea</option>  
+                <option value="eh">Euskal Herria</option>    
+                <option value="eb">Erresuma batuak</option>
+                <option value="fr">Frantzia</option>
+                <option value="au">Australia</option>
+            </select>
+            
+            <div class="buttons">
+                <button type="submit">Bidali</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function validateEmail() {
+            var email = document.getElementById('email');
+            if (!email.value.includes('@') || !email.value.includes('.')) {
+                email.classList.add('error');
+                alert('Mesedez, sartu email baliozko bat.');
+            } else {
+                email.classList.remove('error');
+                alert('Email onartua!');
+            }
+        }
+    </script>
+</body>
+</html>

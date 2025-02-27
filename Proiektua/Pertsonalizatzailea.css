@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    background: #333;
+    padding: 10px;
+    color: white;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+.testuak{
+    text-align: left;
+}
+
+.menu {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 24.5%;
+    left: 45%;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);   
+}
+
+.Kolorea, .letra, .tamainua, .estilo-letra {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.Kolorea {
+    border-radius: 50%;
+}
+
+.letra {
+    background: lightgray;
+    border: 1px solid black;
+}
+
+.tamainua {
+    background: white;
+    border: 1px solid black;
+    background: #ddd;
+}
+
+.estilo-letra {
+    background: white;
+    border: 1px solid black;
+    background: #ddd;
+}
