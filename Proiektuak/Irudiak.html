@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irudiak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            color: white;
+            width: 100%;
+            text-decoration: none;
+        }
+        nav a{
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            padding: 0;
+            text-decoration: none;
+        }
+        h1 {
+            margin-top: 20px;
+            color: blue;
+            text-align: center; 
+        }
+        .sekzioa {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            text-align: left;
+        }
+        #irudibotoia, #Automatikoa {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #Botoia, #irudibotoia {
+            padding: 5px 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #Botoia:hover, #irudibotoia:hover {
+            background-color: #777;
+        }
+ 
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+            color: blue;
+        }
+        img {
+            width: 100px;
+            height: 100px; 
+            object-fit: contain;
+        }
+        body.Iluna {
+            background-color: #222;
+            color: #fff;
+        }
+        body.Iluna nav {
+            background-color: #111;
+        }
+        body.Iluna .sekzioa {
+            background-color: #333;
+            color: #fff;
+        }
+        body.Iluna h1, body.Iluna p {
+            color: #1e90ff; 
+        }
+        body.Iluna #Botoia, body.Iluna #irudibotoia {
+            background-color: #444;
+            color: #fff;
+        }
+        body.Iluna #Botoia:hover, body.Iluna #irudibotoia:hover {
+            background-color: #666;
+        }
+    </style>
+</head>
+<body> 
+    <nav> 
+        <ul>
+            <li><a href="Pertsonalizatzailea.html">Pertsonalizatzailea</a></li>
+            <li><a href="formularioa_proiektua.html">Formularioa</a></li>
+            <li><a href="Irudiak.html">Irudiak</a></li>
+            <li><a id="modua">Moduak</a></li>
+        </ul>
+    </nav>
+
+    <div class="sekzioa">
+        <p>Botoi magikoa: Sortu eta aldatu irudiak</p>
+        <button id="Botoia">Aldatu irudia!</button>
+        <div id="irudibotoia"></div>
+    </div>
+
+    <div class="sekzioa">
+        <p>Automatikoki kargatzea</p>
+        <div id="Automatikoa"></div>
+    </div>
+
+
+    <script>
+        const images = [
+            "javascript.png",
+            "css.png",
+            "html.png",   
+        ];
+
+        let currentImageIndex = 0;
+
+        document.getElementById('Botoia').addEventListener('click', function() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            const irudibotoia = document.getElementById('irudibotoia');
+            const image = document.createElement('img');
+            image.src = images[currentImageIndex];
+            irudibotoia.innerHTML = '';
+            irudibotoia.appendChild(image);
+        });
+
+        let autoImageIndex = 0;
+        const Automatikoa = document.getElementById('Automatikoa');
+
+        function changeAutoImage() {
+            autoImageIndex = (autoImageIndex + 1) % images.length;
+            const image = document.createElement('img');
+            image.src = images[autoImageIndex];
+            Automatikoa.innerHTML = '';
+            Automatikoa.appendChild(image);
+        }
+
+
+        setInterval(changeAutoImage, 300);
+        changeAutoImage();
+        document.getElementById('modua').addEventListener('click', function() {
+            document.body.classList.toggle('Iluna');
+        });
+    </script>
+</body>
+</html>

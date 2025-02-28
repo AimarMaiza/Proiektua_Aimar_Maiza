@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertsonalizatzailea</title>
+    <link rel="stylesheet" href="Pertsonalizatzailea.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="menubotoia">Pertsonalizatzailea</a></li>
+            <li><a href="formularioa_proiektua.html">Formularioa</a></li>
+            <li><a href="Irudiak.html">Irudiak</a></li>
+        </ul>
+    </nav>
+    <div class="kuboa">
+        <div class="testuak">
+            <h1>Ongi etorria pertsonalizatzaileara</h1>
+            <p>Paragrafo honen estiloa alda dezakezu.</p>
+            <p >Klik egin pertsonalizatzeko.</p>
+        </div>
+        <div class="menu">
+            <div class="Koloreak">
+                <p>Atzeko Kolorea</p>
+                <button class="Kolorea" data-color="#f88" onclick="Aldatufondoa(this)" style="background-color:#f88;"></button>
+                <button class="Kolorea" data-color="#8f8" onclick="Aldatufondoa(this)" style="background-color:#8f8;"></button>
+                <button class="Kolorea" data-color="#88f" onclick="Aldatufondoa(this)" style="background-color:#88f;"></button>
+                <button class="Kolorea" data-color="#000" onclick="Aldatufondoa(this)" style="background-color:#000;"></button>
+                <button class="Kolorea" data-color="#fff" onclick="Aldatufondoa(this)" style="background-color:#fff; border:1px solid #000;"></button>
+            </div>
+            <div class="letrak">
+            <p>Aldatu Letrak</p>
+                <button style="background-color: red;" class="letra" data-color="red" onclick="aldatutestua()" >R</button>
+                <button style="background-color: green;" class="letra" data-color="green" onclick="aldatutestua1()" >G</button>
+                <button style="background-color: blue;" class="letra" data-color="blue" onclick="aldatutestua2()" >BL</button>
+                <button style="background-color: black; color: white;" class="letra" data-color="black" onclick="aldatutestua3()" >B</button>
+                <button style="background-color: white;" class="letra" data-color="white" onclick="aldatutestua4()" >W</button>
+            </div>
+            <p>Aldatu letrak</p>
+            <button class="tamainua" onclick="aldatuTestuatamainua()">S</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua1()">XS</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua2()">M</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua3()">L</button>
+            <button class="tamainua" onclick="aldatuTestuatamainua4()">XL</button>
+            <div>
+            <button class="estilo-letra" onclick="aldatuestiloa('Arial, Helvetica, sans-serif')">A</button>
+            <button class="estilo-letra" onclick="aldatuestiloa('Times New Roman, Times, serif')">T</button>
+            <button class="estilo-letra" onclick="aldatuestiloa('Courier New, monospace')">C</button>
+            <button class="estilo-letra" onclick="aldatuestiloa('Fantasy')">F</button>
+            <button class="estilo-letra" onclick="aldatuestiloa('Monospace')">M</button>  
+            </div>
+        </div>
+    </div>
+    <script>
+        function Aldatufondoa(element) {
+            document.body.style.backgroundColor = element.getAttribute('data-color');
+        }
+        function aldatutestua() {
+            document.getElementsByClassName("testuak")[0].style.color = "red";
+        }
+        function aldatutestua1() {
+            document.getElementsByClassName("testuak")[0].style.color = "green";
+        }
+        function aldatutestua2() {
+            document.getElementsByClassName("testuak")[0].style.color = "blue";
+        }
+        function aldatutestua3() {
+            document.getElementsByClassName("testuak")[0].style.color = "black";
+        }
+        function aldatutestua4() {
+            document.getElementsByClassName("testuak")[0].style.color = "white";
+        }
+        function aldatuTestuatamainua(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "12px";
+            document.getElementsByTagName("p")[0].style.fontSize = "12px";
+        }
+        function aldatuTestuatamainua1(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "20px";
+            document.getElementsByTagName("p")[0].style.fontSize = "20px";
+        }
+        function aldatuTestuatamainua2(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "30px";
+            document.getElementsByTagName("p")[0].style.fontSize = "30px";
+        }
+        function aldatuTestuatamainua3(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "40px";
+            document.getElementsByTagName("p")[0].style.fontSize = "40px";
+        }
+        function aldatuTestuatamainua4(){
+            document.getElementsByTagName("h1")[0].style.fontSize = "45px";
+            document.getElementsByTagName("p")[0].style.fontSize = "45px";
+        }
+        function aldatuestiloa(fuente) {
+            document.getElementsByClassName("testuak")[0].style.fontFamily = fuente;
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+        const menuBotoia = document.querySelector("nav a[href='menubotoia']");
+        const menu = document.querySelector(".menu");
+    
+            if (menuBotoia) {
+                menuBotoia.addEventListener("click", function(event) {
+                    event.preventDefault(); 
+                    menu.style.display = menu.style.display === "none" || menu.style.display === "" ? "block" : "none";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+    
