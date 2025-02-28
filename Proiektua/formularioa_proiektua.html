@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>formularioa</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; 
+            color: #000; 
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            transition: background 0.5s, color 0.5s; 
         }
+
         nav {
             background: #333;
             padding: 10px;
@@ -23,7 +27,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 15px;
+            gap: 50px;
             justify-content: center;
             padding: 0;
         }
@@ -32,79 +36,126 @@
             color: white;
             text-decoration: none;
         }
-        .form-container {
-            background: white;
-            padding: 20px;
+
+        .Taula {
+            background: white; 
+            padding: 30px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 20%;
+            transition: background 0.5s, color 0.5s;
         }
+
         label {
             font-weight: bold;
         }
+
         input, select {
             width: 100%;
-            padding: 8px;
+            padding: 12px;
             margin: 5px 0 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            transition: background 0.5s, color 0.5s;
         }
-        .error {
-            border: 1px solid red;
-        }
-        .buttons {
-            display: flex;
-            justify-content: space-between;
+
+        button {
+            background-color: gray;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
             width: 100%;
-            
+            margin-top: 5px;
+            border-radius: 4px;
         }
-        .generoa{
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .generoa {
             display: flex;
+            gap: 10px;
         }
-       
+
+        
+        .beltz-modua {
+            background-color: #121212;
+            color: white;
+        }
+
+        .beltz-modua .Taula {
+            background: #1e1e1e;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .beltz-modua input, 
+        .beltz-modua select {
+            background-color: #2a2a2a;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        .beltz-modua button {
+            background-color: #6200ea;
+        }
+
+        .beltz-modua button:hover {
+            background-color: #3700b3;
+        }
+
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#">Pertsonalizatzailea</a></li>
-            <li><a href="#">Formularioa</a></li>
-            <li><a href="#">Irudiak</a></li>
-            <li><a href="#">Moduak</a></li>
+            <li><a href="Pertsonalizatzailea.html">Pertsonalizatzailea</a></li>
+            <li><a href="formularioa_proiektua.html">Formularioa</a></li>
+            <li><a href="Irudiak.html">Irudiak</a></li>
+            <li><a href="#" id="Botoia">Moduak</a></li>
         </ul>
     </nav>
-    <div class="form-container">
-        <form id="myForm">
+
+    <div class="Taula">
+        <form id="formularioa">
             <label for="name">Izen osoa:</label>
             <input type="text" id="name" name="name" required>
             
             <label for="email">Emaila:</label>
             <input type="email" id="email" name="email" placeholder="Sartzazu zure posta elektronikoa" required>
             
-            <button type="button" onclick="validateEmail()">Onartu</button><br>
+            <button type="button" onclick="Emailabalidatu()">Onartu</button><br>
+            
             <label>Generoa:</label><br>
             <div class="generoa">
-            
-            <input type="radio" id="male" name="gender" value="Gizonezkoa"> <label for="male">Gizonezkoa</label>
-            <input type="radio" id="female" name="gender" value="Emakumezkoa"> <label for="female">Emakumezkoa</label>
-            <input type="radio" id="other" name="gender" value="Beste bat"> <label for="other">Beste bat</label>
-            </div>
-            <label for="country">Estatua:</label>
-            <select id="country" name="country">
+                <input type="radio" id="gizonezkoa" name="generoa" value="male">
+                <label for="gizonezkoa">Gizonezkoa</label>
+
+                <input type="radio" id="emakumezkoa" name="generoa" value="emakumezkoa">
+                <label for="emakumezkoa">Emakumezkoa</label>
+
+                <input type="radio" id="besteak" name="generoa" value="besteak">
+                <label for="besteak">Besteak</label>
+            </div><br>
+
+            <label for="herrialdea">Herrialdea:</label>
+            <select id="herrialdea" name="herrialdea">
                 <option value="">Aukeratu zure herrialdea</option>  
                 <option value="eh">Euskal Herria</option>    
-                <option value="eb">Erresuma batuak</option>
+                <option value="eb">Erresuma Batuak</option>
                 <option value="fr">Frantzia</option>
                 <option value="au">Australia</option>
             </select>
             
-            <div class="buttons">
+            <div id="botoia">
                 <button type="submit">Bidali</button>
             </div>
         </form>
     </div>
     
     <script>
-        function validateEmail() {
+        function Emailabalidatu() {
             var email = document.getElementById('email');
             if (!email.value.includes('@') || !email.value.includes('.')) {
                 email.classList.add('error');
@@ -114,6 +165,12 @@
                 alert('Email onartua!');
             }
         }
+
+        
+        document.getElementById('Botoia').addEventListener('click', function() {
+            document.body.classList.toggle('beltz-modua');
+            
+        });
     </script>
 </body>
 </html>
