@@ -24,7 +24,7 @@ if (!isset($_SESSION["erabiltzailea"])) {
             backdrop-filter: blur(3px);
         }
 
-        .container-fluid {
+        .ontzi-osorik {
             text-align: center;
             background-color: rgba(255, 0, 0, 1);
             padding: 0;
@@ -35,18 +35,19 @@ if (!isset($_SESSION["erabiltzailea"])) {
             font-size: 37px;
             color: white;
         }
+
         img.logo {
-            width: 120px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             transition: transform 0.3s ease-in-out;
             transform-origin: center;
         }
 
-        img.logo.zoom {
+        img.logo.handitu {
             transform: scale(1.2);
         }
 
-        .grid-container {
+        .sare-ontzia {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
@@ -54,25 +55,25 @@ if (!isset($_SESSION["erabiltzailea"])) {
             margin: 20px auto;
         }
 
-        .numbered-list {
+        .zerrenda-zenbatua {
             padding: 20px;
             border-radius: 10px;
         }
 
-        .numbered-list ol {
+        .zerrenda-zenbatua ol {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
 
-        .numbered-list h2,
-        .numbered-list h3 {
+        .zerrenda-zenbatua h2,
+        .zerrenda-zenbatua h3 {
             color: black;
         }
 
-        .numbered-list img {
+        .zerrenda-zenbatua img {
             width: 100%;
-            height: 280px;
+            height: 230px;
             border: 5px solid black;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -80,47 +81,49 @@ if (!isset($_SESSION["erabiltzailea"])) {
             transform-origin: top;
         }
 
-        .numbered-list img.zoom {
+        .zerrenda-zenbatua img.handitu {
             transform: scale(1.2); 
         }
 
-        .numbered-list h1.zoom {
+        .zerrenda-zenbatua h1.handitu {
             transform: scale(1.2); 
         }
 
-        .welcome-message {
+        .ongietorri-mezua {
             text-align: center;
             font-size: 18px;
             color: white;
             margin-top: 10px;
         }
 
-        .logout-link {
-            text-align: center;
-            margin-top: 5px;
+        .saioa-botoia {
+            position: absolute;
+            top: 115px; 
+            right: 30px;
+            margin-bottom: 10px;
         }
 
-        .logout-link a {
-            color: white;
-            text-decoration: underline;
+        .saioa-botoia + .saioa-botoia {
+            top: 165px; 
         }
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="ontzi-osorik">
         <h1 style="color: white;">OSASUNA</h1>
         <img src="irudiak/Osasuna1.jpg" alt="Club Atlético Osasunaren armarria" class="logo">
-        <div class="welcome-message">
+        <div class="ongietorri-mezua">
             Ongi etorri, <?php echo htmlspecialchars($_SESSION['erabiltzailea']); ?>!
         </div>
-        <div class="logout-link">
+        <div class="irten-esteka">
             <a href="irten.php">[ Irten ]</a>
         </div>
     </div>
 
-    <div class="grid-container">
-        <div class="numbered-list">
+    <div class="sare-ontzia">
+        <div class="zerrenda-zenbatua">
             <ol>
                 <li>
                     <h3>Zer da Osasuna</h3>
@@ -137,7 +140,7 @@ if (!isset($_SESSION["erabiltzailea"])) {
             </ol>
         </div>
 
-        <div class="numbered-list">
+        <div class="zerrenda-zenbatua">
             <ol start="3">
                 <li>
                     <h3>Partidak</h3>
@@ -155,26 +158,26 @@ if (!isset($_SESSION["erabiltzailea"])) {
         </div>
     </div>
 
-    <div class="login-button">
+    <div class="saioa-botoia">
         <a href="login.html">
-            <img id="loginIcon" src="irudiak/login.png" alt="Saioa hasi" style="width: 40px;">
+            <img id="saioaIkonoa" src="irudiak/login.png" alt="Saioa hasi" style="width: 40px;">
         </a>
     </div> 
-    <div class="login-button">
+    <div class="saioa-botoia">
         <a href="izenaeman.html">
-            <img id="loginIcon" src="irudiak/Hasisaioa.png" alt="Erregistratu" style="width: 40px;">
+            <img id="erregistratuIkonoa" src="irudiak/Hasisaioa.png" alt="Erregistratu" style="width: 40px;">
         </a>
     </div> 
-    <span id="welcomeMessage"></span>
+    <span id="ongietorriMezua"></span>
 
     <script>
-        const user = localStorage.getItem("user");
-        if (user) {
-            document.getElementById("loginIcon").src = "irudiak/logout.png";
-            document.getElementById("loginIcon").alt = "Saioa itxi";
-            document.getElementById("welcomeMessage").textContent = "Ongi etorri, " + user;
+        const erabiltzailea = localStorage.getItem("user");
+        if (erabiltzailea) {
+            document.getElementById("saioaIkonoa").src = "irudiak/logout.png";
+            document.getElementById("saioaIkonoa").alt = "Saioa itxi";
+            document.getElementById("ongietorriMezua").textContent = "Ongi etorri, " + erabiltzailea;
 
-            document.querySelector(".login-button a").addEventListener("click", function (e) {
+            document.querySelector(".saioa-botoia a").addEventListener("click", function (e) {
                 e.preventDefault();
                 if (confirm("Ziur zaude saioa itxi nahi duzula?")) {
                     localStorage.removeItem("user");
@@ -184,25 +187,25 @@ if (!isset($_SESSION["erabiltzailea"])) {
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            const images = document.querySelectorAll('.numbered-list img');
-            const logo = document.querySelector('.logo'); 
+            const irudiak = document.querySelectorAll('.zerrenda-zenbatua img');
+            const armarria = document.querySelector('.logo'); 
 
-            images.forEach(img => {
-                img.addEventListener('mouseover', function () {
-                    img.classList.add('zoom');
+            irudiak.forEach(irudia => {
+                irudia.addEventListener('mouseover', function () {
+                    irudia.classList.add('handitu');
                 });
 
-                img.addEventListener('mouseout', function () {
-                    img.classList.remove('zoom');
+                irudia.addEventListener('mouseout', function () {
+                    irudia.classList.remove('handitu');
                 });
             });
 
-            logo.addEventListener('mouseover', function () {
-                logo.classList.add('zoom');
+            armarria.addEventListener('mouseover', function () {
+                armarria.classList.add('handitu');
             });
 
-            logo.addEventListener('mouseout', function () {
-                logo.classList.remove('zoom');
+            armarria.addEventListener('mouseout', function () {
+                armarria.classList.remove('handitu');
             });
         });
     </script>
