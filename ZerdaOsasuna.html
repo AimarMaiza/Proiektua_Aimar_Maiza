@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <title>Historia</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: white;
+            font-family: sans-serif;
+            background-image: url('irudiak/fondo.jpg');
+            backdrop-filter: blur(6px);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ontzi-orokorra {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: red;
+            color: white;
+        }
+
+        .armarria {
+            width: 120px;
+            height: 140px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 37px;
+            margin-bottom: 0px;
+        }
+
+        .talde-informazioa {
+            text-align: left;
+            margin: 20px;
+            word-wrap: break-word;
+        }
+
+        .talde-informazioa ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .talde-informazioa ul li {
+            margin-left: 20px;
+        }
+
+        .talde-informazioa img {
+            max-width: 29%;
+            height: auto;
+            margin-top: 2.9px;
+        }
+    </style>
+
+    <script>
+        function testuaAldatu() {
+            document.getElementById("adibidea").innerHTML = "Kaixo JavaScript!";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="ontzi-orokorra">
+        <h1>HISTORIA</h1>
+        <a href="Index.html">
+            <img src="irudiak/Osasuna1.jpg" alt="Club Atlético Osasunaren armarria" class="armarria">
+        </a>
+    </div>
+
+    <div class="talde-informazioa">
+        <h2>Club Atlético Osasuna</h2>
+        <ul>
+            <li><strong>Zer da Osasuna:</strong><br>Club Atlético Osasuna Iruñeko (Nafarroa) futbol taldea da, LaLiga EA Sports ligan jokatzen duena, Espainiako futbolaren mailarik gorenean. 1920ko urriaren 24an sortu zen, bi kluben arteko fusioaren ondorioz: Sportiva Foot-ball Club eta New Club. Horrek Nafarroako klub dekanoa bihurtu zuen. Nafarroako futbol klub garrantzitsuena da, eta Lehen Mailan aritu den bakarra.</li>
+            <li><br><strong>Historia:</strong><br>Osasuna izenak "osasuna", "indarra" edo "bizia" esan nahi du euskaraz. Liga osoko euskarazko izena duen talde bakarra da.
+                <p>Club Atlético Osasunak UEFA Champions League-ren sailkapen-fase batean parte hartu du, eta UEFA Kopako lau ediziotan; 2006/2007 denboraldian finalerdietara iritsi zen. Halaber, UEFA Conference League-ren sailkapen-fase batean aritu da. Kluba bere historian bi aldiz iritsi da Errege Kopako finalera: 2005ean eta 2023an, biak galduz (2-1) Real Betis eta Real Madrilen aurka. 2022/23 denboraldi bikainaren ostean, 2024ko Espainiako Superkopan parte hartu zuen lehen aldiz bere historian.
+                <p>1931-1932 denboraldian Osasunak Bigarren Mailara igo zen, lehen postuan amaitu ondoren. Hiru denboraldi geroago, 1934-1935ean, lehen aldiz Lehen Mailara igo zen. Espainiako Kopan, finalerdietara iritsi zen. 1935-1936 denboraldia izan zen Osasunaren lehen denboraldia mailarik gorenean.</li>
+            <li><br><strong>Estadioa:</strong><br>El Sadar estadioa da Club Atlético Osasunaren etxeko futbol-zelaia.
+                <p>El Sadar (Sadar ibaiaren izena darama, estadioaren inguruan dagoena), klubaren estadioa, 23.516 ikusle eserarentzako edukiera du. 1967an inauguratu zen, eta 2021ean eraberritze sakona jasan zuen. Zelaiko neurriak 105 metro luze eta 67,5 metro zabal dira.</li>
+            <div id="kontagailua" style="font-size: 20px; color: white; margin: 20px 0;"></div>
+            <img src="irudiak/sadar2.jpg" alt="Sadarren irudia">
+        </ul>
+    </div>
+
+    <script>
+        function eguneratuKontagailua() {
+            const fundazioa = new Date(1920, 9, 24);
+            const orain = new Date();
+
+            let urteak = orain.getFullYear() - fundazioa.getFullYear();
+            let hilabeteak = orain.getMonth() - fundazioa.getMonth();
+            let egunak = orain.getDate() - fundazioa.getDate();
+            let orduak = orain.getHours();
+            let minutuak = orain.getMinutes();
+            let segundoak = orain.getSeconds();
+
+            if (egunak < 0) {
+                hilabeteak -= 1;
+                egunak += new Date(orain.getFullYear(), orain.getMonth(), 0).getDate();
+            }
+
+            if (hilabeteak < 0) {
+                urteak -= 1;
+                hilabeteak += 12;
+            }
+
+            document.getElementById("kontagailua").innerHTML =
+                "Osasuna sortu zenetik igaro dira " + urteak + " urte, " + hilabeteak + " hilabete, " + egunak + " egun, " +
+                orduak + " ordu, " + minutuak + " minutu, " + segundoak + " segundo.";
+        }
+
+        setInterval(eguneratuKontagailua, 1000);
+        eguneratuKontagailua();
+    </script>
+</body>
+
+</html>

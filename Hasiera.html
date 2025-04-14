@@ -1,0 +1,210 @@
+<?php
+session_start();
+if (!isset($_SESSION["erabiltzailea"])) {
+    header("Location: login.html");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <title>Osasuna</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(irudiak/osasuna33.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+            backdrop-filter: blur(3px);
+        }
+
+        .container-fluid {
+            text-align: center;
+            background-color: rgba(255, 0, 0, 1);
+            padding: 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 37px;
+            color: white;
+        }
+        img.logo {
+            width: 120px;
+            height: 140px;
+            transition: transform 0.3s ease-in-out;
+            transform-origin: center;
+        }
+
+        img.logo.zoom {
+            transform: scale(1.2);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .numbered-list {
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .numbered-list ol {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .numbered-list h2,
+        .numbered-list h3 {
+            color: black;
+        }
+
+        .numbered-list img {
+            width: 100%;
+            height: 280px;
+            border: 5px solid black;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+            transform-origin: top;
+        }
+
+        .numbered-list img.zoom {
+            transform: scale(1.2); 
+        }
+
+        .numbered-list h1.zoom {
+            transform: scale(1.2); 
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .logout-link {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .logout-link a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 style="color: white;">OSASUNA</h1>
+        <img src="irudiak/Osasuna1.jpg" alt="Club Atlético Osasunaren armarria" class="logo">
+        <div class="welcome-message">
+            Ongi etorri, <?php echo htmlspecialchars($_SESSION['erabiltzailea']); ?>!
+        </div>
+        <div class="logout-link">
+            <a href="irten.php">[ Irten ]</a>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="numbered-list">
+            <ol>
+                <li>
+                    <h3>Zer da Osasuna</h3>
+                    <a href="ZerdaOsasuna.html">
+                        <img src="irudiak/que es.jpg" alt="1. irudiaren deskribapena">
+                    </a>
+                </li>
+                <li>
+                    <h3>Alineazioa</h3>
+                    <a href="Plantila.html">
+                        <img src="irudiak/alineacion.jpg" alt="2. irudiaren deskribapena">
+                    </a>
+                </li>
+            </ol>
+        </div>
+
+        <div class="numbered-list">
+            <ol start="3">
+                <li>
+                    <h3>Partidak</h3>
+                    <a href="Partidak.html">
+                        <img src="irudiak/partidos.jpg" alt="3. irudiaren deskribapena">
+                    </a>
+                </li>
+                <li>
+                    <h3>Klasifikazioa</h3>
+                    <a href="Klasifikazioa.html">
+                        <img src="irudiak/clasificacion.jpg" alt="4. irudiaren deskribapena">
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="login-button">
+        <a href="login.html">
+            <img id="loginIcon" src="irudiak/login.png" alt="Saioa hasi" style="width: 40px;">
+        </a>
+    </div> 
+    <div class="login-button">
+        <a href="izenaeman.html">
+            <img id="loginIcon" src="irudiak/Hasisaioa.png" alt="Erregistratu" style="width: 40px;">
+        </a>
+    </div> 
+    <span id="welcomeMessage"></span>
+
+    <script>
+        const user = localStorage.getItem("user");
+        if (user) {
+            document.getElementById("loginIcon").src = "irudiak/logout.png";
+            document.getElementById("loginIcon").alt = "Saioa itxi";
+            document.getElementById("welcomeMessage").textContent = "Ongi etorri, " + user;
+
+            document.querySelector(".login-button a").addEventListener("click", function (e) {
+                e.preventDefault();
+                if (confirm("Ziur zaude saioa itxi nahi duzula?")) {
+                    localStorage.removeItem("user");
+                    location.reload();
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.numbered-list img');
+            const logo = document.querySelector('.logo'); 
+
+            images.forEach(img => {
+                img.addEventListener('mouseover', function () {
+                    img.classList.add('zoom');
+                });
+
+                img.addEventListener('mouseout', function () {
+                    img.classList.remove('zoom');
+                });
+            });
+
+            logo.addEventListener('mouseover', function () {
+                logo.classList.add('zoom');
+            });
+
+            logo.addEventListener('mouseout', function () {
+                logo.classList.remove('zoom');
+            });
+        });
+    </script>
+</body>
+</html>
