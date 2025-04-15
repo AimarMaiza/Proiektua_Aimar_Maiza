@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irudien Karusela</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .karusela {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .irudiak {
+      display: flex;
+      width: max-content;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+      will-change: transform;
+    }
+
+    .irudiak img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      image-rendering: auto;
+      transition: transform 0.4s ease-in-out;
+      backface-visibility: hidden;
+    }
+
+    .irudiak img:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 2;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .aurrekoa {
+      left: 10px;
+    }
+
+    .hurrengoa {
+      right: 10px;
+    }
+    .atzera {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #002b5c;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+    .atzera:hover {
+            background-color: #001f44;
+    }
+  </style>
+</head>
+<body>
+
+<div class="karusela">
+    <button class="atzera" onclick="window.location.href='Hasiera.html'">Atzera</button>
+  <div class="irudiak">
+    <img src="irudiak/monicius.jpg" alt="Irudia 1">
+    <img src="irudiak/argazkia2.jpg" alt="Irudia 2">
+    <img src="irudiak/Argazki1.jpg" alt="Irudia 3">
+    <img src="irudiak/argazkia3.jpg" alt="Irudia 4">
+    <img src="irudiak/argazkia4.jpg" alt="Irudia 5">
+    <img src="irudiak/argazkia5.jpg" alt="Irudia 6">
+    <img src="irudiak/argazkia6.jpg" alt="Irudia 7">
+    <img src="irudiak/argazkia7.jpg" alt="Irudia 8">
+    <img src="irudiak/argazkia8.jpg" alt="Irudia 9">
+    <img src="irudiak/argazkia9.jpg" alt="Irudia 10">
+    <img src="irudiak/argazkia10.jpg" alt="Irudia 11">
+    <img src="irudiak/argazkia11.jpg" alt="Irudia 12">
+  </div>
+  <button class="aurrekoa" onclick="aldatuIrudia(-1)">&#10094;</button>
+  <button class="hurrengoa" onclick="aldatuIrudia(1)">&#10095;</button>
+</div>
+
+<script>
+  let index = 0;
+
+  function aldatuIrudia(n) {
+    const irudiak = document.querySelectorAll('.irudiak img');
+    const guztira = irudiak.length;
+
+    index += n;
+
+    if (index >= guztira) {
+      index = 0;
+    } else if (index < 0) {
+      index = guztira - 1;
+    }
+
+    const desplazamendua = -index * window.innerWidth;
+    document.querySelector('.irudiak').style.transform = `translateX(${desplazamendua}px)`;
+  }
+
+  setInterval(() => {
+    aldatuIrudia(1);
+  }, 3000);
+</script>
+
+</body>
+</html>

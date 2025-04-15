@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Txapelketa Sailkapena</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: white;
+            font-family: sans-serif;
+            background: url(irudiak/clasificacion.jpg);
+            backdrop-filter: blur(5px);
+            background-size: cover;
+        }
+
+        .barra-nagusia {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #c80000;
+            color: white;
+            padding:45px 30px;
+            border-bottom: 2px solid gold;
+            position: relative;
+        }
+
+        .menu-elementuak {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .menu-elementuak a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu-elementuak a:hover {
+            color: #ffd700;
+        }
+
+        .osasuna-logo {
+            height: 70px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .osasuna-logo:hover {
+            transform: translateX(-50%) scale(1.2);
+        }
+
+        .saioak {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .saioak img {
+            width: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .saioak img:hover {
+            transform: scale(1.2);
+        }
+
+        #ongietorriMezua {
+            color: white;
+            font-weight: bold;
+        }
+
+        .bilgailua {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .talde-zerrenda {
+            list-style: none;
+            padding: 0;
+            font-size: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .talde-elementua {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .talde-elementua:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .talde-elementua .equipo {
+            display: flex;
+            align-items: center;
+        }
+
+        .talde-ikur-txikia {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .talde-elementua .progreso {
+            width: 50%;
+            height: 8px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+
+        .progreso-bar {
+            height: 100%;
+            background-color: #ffd700;
+            border-radius: 5px;
+        }
+
+        .talde-elementua .estadisticas {
+            display: flex;
+            gap: 10px;
+        }
+
+        .talde-elementua .estadisticas div {
+            font-weight: bold;
+        }
+
+        .irabaziak { color: limegreen; }
+        .berdinketak { color: orange; }
+        .galdutak { color: red; }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="barra-nagusia">
+        <div class="menu-elementuak"></div>
+        <a href="Hasiera.html">
+            <img src="irudiak/Osasuna1.jpg" alt="Club Atlético Osasunaren Ikurra" class="osasuna-logo">
+        </a>
+    </div>
+
+    <div class="bilgailua">
+        <ol class="talde-zerrenda">
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>1. </pre>
+                    <img src="irudiak/barcelona_logo.png" alt="Barcelona" class="talde-ikur-txikia">
+                    Barcelona
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 70</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 22</div>
+                    <div class="berdinketak">Berdinketa: 4</div>
+                    <div class="galdutak">Galdutak: 5</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>2. </pre>
+                    <img src="irudiak/real_madrid_logo.png" alt="Real Madrid" class="talde-ikur-txikia">
+                    Real Madrid
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 66</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 20</div>
+                    <div class="berdinketak">Berdinketa: 6</div>
+                    <div class="galdutak">Galdutak: 5</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>3. </pre>
+                    <img src="irudiak/Atletico.jpg" alt="Atlético Madrid" class="talde-ikur-txikia">
+                    Atlético de Madrid
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 63</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 18</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 4</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>4. </pre>
+                    <img src="irudiak/athletic_club_logo.png" alt="Athletic Club" class="talde-ikur-txikia">
+                    Athletic Club
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 57</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 15</div>
+                    <div class="berdinketak">Berdinketa: 12</div>
+                    <div class="galdutak">Galdutak: 4</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>5. </pre>
+                    <img src="irudiak/villarreal.jpg" alt="Villarreal" class="talde-ikur-txikia">
+                    Villarreal
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 51</div>
+                    <div>Partidak: 30</div>
+                    <div class="irabaziak">Irabaziak: 14</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 7</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>6. </pre>
+                    <img src="irudiak/betis.jpg" alt="Real Betis" class="talde-ikur-txikia">
+                    Real Betis
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 48</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 13</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 9</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>7. </pre>
+                    <img src="irudiak/celta.jpg" alt="Celta de Vigo" class="talde-ikur-txikia">
+                    Celta de Vigo
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 43</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 12</div>
+                    <div class="berdinketak">Berdinketa: 7</div>
+                    <div class="galdutak">Galdutak: 12</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>8. </pre>
+                    <img src="irudiak/mallorca.png" alt="Mallorca" class="talde-ikur-txikia">
+                    Mallorca
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 43</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 12</div>
+                    <div class="berdinketak">Berdinketa: 7</div>
+                    <div class="galdutak">Galdutak: 12</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>9. </pre>
+                    <img src="irudiak/real_sociedad.png" alt="Real Sociedad" class="talde-ikur-txikia">
+                    Real Sociedad
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 41</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 12</div>
+                    <div class="berdinketak">Berdinketa: 5</div>
+                    <div class="galdutak">Galdutak: 14</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>10. </pre>
+                    <img src="irudiak/rayo_vallecano.png" alt="Rayo Vallecano" class="talde-ikur-txikia">
+                    Rayo Vallecano
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 40</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 10</div>
+                    <div class="berdinketak">Berdinketa: 10</div>
+                    <div class="galdutak">Galdutak: 11</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>11. </pre>
+                    <img src="irudiak/getafe.png" alt="Getafe" class="talde-ikur-txikia">
+                    Getafe
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 39</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 10</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 12</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>12. </pre>
+                    <img src="irudiak/Osasuna1.jpg" alt="Osasuna" class="talde-ikur-txikia">
+                    Osasuna
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 38</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 8</div>
+                    <div class="berdinketak">Berdinketa: 14</div>
+                    <div class="galdutak">Galdutak: 9</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>13. </pre>
+                    <img src="irudiak/valencia.png" alt="Valencia C.F." class="talde-ikur-txikia">
+                    Valencia C.F.
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 37</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 9</div>
+                    <div class="berdinketak">Berdinketa: 10</div>
+                    <div class="galdutak">Galdutak: 12</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>14. </pre>
+                    <img src="irudiak/sevilla.jpg" alt="Sevilla" class="talde-ikur-txikia">
+                    Sevilla
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 36</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 9</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 13</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>15. </pre>
+                    <img src="irudiak/espanyol.jpg" alt="RCD Espanyol" class="talde-ikur-txikia">
+                    RCD Espanyol
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 35</div>
+                    <div>Partidak: 30</div>
+                    <div class="irabaziak">Irabaziak: 9</div>
+                    <div class="berdinketak">Berdinketa: 8</div>
+                    <div class="galdutak">Galdutak: 13</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>16. </pre>
+                    <img src="irudiak/girona.png" alt="Girona" class="talde-ikur-txikia">
+                    Girona
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 34</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 9</div>
+                    <div class="berdinketak">Berdinketa: 7</div>
+                    <div class="galdutak">Galdutak: 15</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>17. </pre>
+                    <img src="irudiak/alaves.jpg" alt="Alavés" class="talde-ikur-txikia">
+                    Alavés
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 30</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 7</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 15</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>18. </pre>
+                    <img src="irudiak/las_palmas.png" alt="Las Palmas" class="talde-ikur-txikia">
+                    Las Palmas
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 29</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 7</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 15</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>19. </pre>
+                    <img src="irudiak/leganes.png" alt="Leganés" class="talde-ikur-txikia">
+                    Leganés
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 28</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 6</div>
+                    <div class="berdinketak">Berdinketa: 10</div>
+                    <div class="galdutak">Galdutak: 15</div>
+                </div>
+            </li>
+            <li class="talde-elementua">
+                <div class="equipo">
+                    <pre>20. </pre>
+                    <img src="irudiak/Valladolid.jpg" alt="Valladolid" class="talde-ikur-txikia">
+                    Valladolid
+                </div>
+                <div class="estadisticas">
+                    <div>Puntuak: 27</div>
+                    <div>Partidak: 31</div>
+                    <div class="irabaziak">Irabaziak: 6</div>
+                    <div class="berdinketak">Berdinketa: 9</div>
+                    <div class="galdutak">Galdutak: 16</div>
+                </div>
+            </li>            
+        </ol>
+    </div>
+
+    <script>
+        const erabiltzailea = localStorage.getItem("user");
+        if (erabiltzailea) {
+            document.getElementById("saioaIkonoa").src = "irudiak/Login.jpg";
+            document.getElementById("saioaIkonoa").alt = "Saioa itxi";
+            document.getElementById("ongietorriMezua").textContent = "Ongi etorri, " + erabiltzailea;
+
+            document.getElementById("loginLink").addEventListener("click", function (e) {
+                e.preventDefault();
+                if (confirm("Ziur zaude saioa itxi nahi duzula?")) {
+                    localStorage.removeItem("user");
+                    location.reload();
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

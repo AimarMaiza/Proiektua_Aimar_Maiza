@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <title>Historia</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('irudiak/fondo.jpg');
+            backdrop-filter: blur(6px);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .ontzi-orokorra {
+            text-align: center;
+            background-color: #b30000;
+            padding: 10px;
+        }
+        .barra-nagusia {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #c80000;
+            color: white;
+            padding:47px 30px;
+            border-bottom: 2px solid gold;
+            position: relative;
+        }
+
+        .osasuna-logo {
+            height: 70px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .armarria {
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .talde-informazioa {
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 15px;
+            width: 80%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .talde-informazioa h2 {
+            color: #ffdddd;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .talde-informazioa ul {
+            list-style: none;
+            padding: 5;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .talde-informazioa li {
+            margin-bottom: 20px;
+        }
+
+        .talde-informazioa img {
+            max-width: 40%;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        #kontagailua {
+            font-size: 24px;
+            color: #ffd700;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="barra-nagusia">
+        <div class="menu-eskuma">
+        </div>
+        <a href="Hasiera.html">
+            <img src="irudiak/Osasuna1.jpg" alt="Osasuna logo" class="osasuna-logo">
+        </a>
+    </div>
+
+    <div class="talde-informazioa">
+        <h2>Club Atlético Osasuna</h2>
+        <ul>
+            <li><strong>Zer da Osasuna:</strong><br>Club Atlético Osasuna Iruñeko (Nafarroa) futbol taldea da, LaLiga EA Sports ligan jokatzen duena, Espainiako futbolaren mailarik gorenean. 1920ko urriaren 24an sortu zen, bi kluben arteko fusioaren ondorioz: Sportiva Foot-ball Club eta New Club.</li>
+
+            <li><strong>Historia:</strong><br>Osasuna izenak "osasuna", "indarra" edo "bizia" esan nahi du euskaraz. Liga osoko euskarazko izena duen talde bakarra da. UEFA Champions League eta UEFA Kopan parte hartu du, baita Errege Kopako finaletara iritsi ere.</li>
+
+            <li><strong>Estadioa:</strong><br>El Sadar estadioa da Club Atlético Osasunaren etxeko futbol-zelaia. 23.516 ikusle sartzen dira bertan, eta 2021ean berriztu zuten. Zelaiko neurriak: 105x67,5 metro.</li>
+        </ul>
+
+        <div id="kontagailua"></div>
+
+        <img src="irudiak/sadar2.jpg" alt="Sadarren irudia">
+    </div>
+
+    <script>
+        function eguneratuKontagailua() {
+            const fundazioa = new Date(1920, 9, 24);
+            const orain = new Date();
+
+            let urteak = orain.getFullYear() - fundazioa.getFullYear();
+            let hilabeteak = orain.getMonth() - fundazioa.getMonth();
+            let egunak = orain.getDate() - fundazioa.getDate();
+            let orduak = orain.getHours();
+            let minutuak = orain.getMinutes();
+            let segundoak = orain.getSeconds();
+
+            if (egunak < 0) {
+                hilabeteak -= 1;
+                egunak += new Date(orain.getFullYear(), orain.getMonth(), 0).getDate();
+            }
+
+            if (hilabeteak < 0) {
+                urteak -= 1;
+                hilabeteak += 12;
+            }
+
+            document.getElementById("kontagailua").innerHTML =
+                ` <span style="color:#ffffff">${urteak}</span> urte, ` +
+                `<span style="color:#ffffff">${hilabeteak}</span> hilabete, ` +
+                `<span style="color:#ffffff">${egunak}</span> egun, ` +
+                `<span style="color:#ffffff">${orduak}</span> ordu, ` +
+                `<span style="color:#ffffff">${minutuak}</span> minutu, ` +
+                `<span style="color:#ffffff">${segundoak}</span> segundo<br>` +
+                ` Osasuna sortu zenetik igaro den denbora.`;
+        }
+
+        setInterval(eguneratuKontagailua, 1000);
+        eguneratuKontagailua();
+    </script>
+</body>
+
+</html>

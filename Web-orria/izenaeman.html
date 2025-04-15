@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Izena Eman</title>
+    <style>
+        body {
+            background-image: url('irudiak/hastekoirudi.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .Formularioa {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            position: relative;
+        }
+
+        .Formularioa h2 {
+            text-align: center;
+            color: #002b5c;
+            margin-bottom: 20px;
+        }
+
+        .Formularioa label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #002b5c;
+        }
+
+        .Formularioa input[type="text"],
+        .Formularioa input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .Formularioa input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #d6001c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .Formularioa input[type="submit"]:hover {
+            background-color: #a40015;
+        }
+
+        .atzera {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #002b5c;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .atzera:hover {
+            background-color: #001f44;
+        }
+    </style>
+</head>
+<body>
+    <div class="Formularioa">
+        <button class="atzera" onclick="window.location.href='Hasiera.html'">Atzera</button>
+        <h2>Izena Eman</h2>
+        <form action="izenaeman.php" method="post">
+            <label for="izena">Izena</label>
+            <input type="text" name="izena" id="izena" required>
+
+            <label for="pasahitza">Pasahitza</label>
+            <input type="password" name="pasahitza" id="pasahitza" required>
+
+            <input type="submit" value="Izena Eman">
+        </form>
+    </div>
+</body>
+</html>
