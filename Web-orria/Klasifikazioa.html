@@ -445,23 +445,6 @@
             </li>            
         </ol>
     </div>
-
-    <script>
-        const erabiltzailea = localStorage.getItem("user");
-        if (erabiltzailea) {
-            document.getElementById("saioaIkonoa").src = "irudiak/Login.jpg";
-            document.getElementById("saioaIkonoa").alt = "Saioa itxi";
-            document.getElementById("ongietorriMezua").textContent = "Ongi etorri, " + erabiltzailea;
-
-            document.getElementById("loginLink").addEventListener("click", function (e) {
-                e.preventDefault();
-                if (confirm("Ziur zaude saioa itxi nahi duzula?")) {
-                    localStorage.removeItem("user");
-                    location.reload();
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>

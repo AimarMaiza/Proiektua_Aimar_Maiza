@@ -13,9 +13,10 @@ if ($conn->connect_error) {
 
 $erabil = $_POST["izena"];
 $pasa = $_POST["pasahitza"];
+$email = $_POST["korreoa"];
 
-$sql = "INSERT INTO taula (erabiltzailea, pasahitza)
-VALUES ('$erabil', '$pasa')";
+$sql = "INSERT INTO taula (erabiltzailea, pasahitza, korreoa)
+VALUES ('$erabil', '$pasa', '$email')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";

@@ -14,7 +14,8 @@ if ($conn->connect_error) {
 // sql to create table
 $sql = "CREATE TABLE taula (
 erabiltzailea VARCHAR(30) NOT NULL,
-pasahitza VARCHAR(30) NOT NULL
+pasahitza VARCHAR(30) NOT NULL,
+korreoa varchar(30) not null
 )";
 
 if ($conn->query($sql) === TRUE) {

@@ -14,8 +14,9 @@ if ($conn->connect_error) {
 
 $erabil = $_POST["izena"];
 $pasa = $_POST["pasahitza"];
+$email = $_POST["korreoa"];
 
-$sql = "SELECT erabiltzailea, pasahitza FROM taula WHERE erabiltzailea='$erabil' AND pasahitza='$pasa'";
+$sql = "SELECT erabiltzailea, pasahitza FROM taula WHERE erabiltzailea='$erabil' AND pasahitza='$pasa' and korreoa='$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
